@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="screen active" id="start-screen">
+            <h1>Quiz Time!</h1>
+            <p>Test your knowledge with these questions!</p>
+            <button id="myButton">Start Quiz</button>
+        </div>
+        <div class="screen" id="quiz-screen">
+            <div class="quiz-header">
+                <h2 id="question">Question goes here</h2>
+                <div class="quiz-info">
+                    <p>Question<span id="current-question"> 1 of <span id="total-questions">5</span></span></p>
+                    <p>Score: <span id="score">0</span></p>
+                </div>
+            </div>
+            <div class="answers-container" id="answers-container">
+                <button class="answer-btn" id="answer1">Answer 1</button>
+                <button class="answer-btn" id="answer2">Answer 2</button>
+                <button class="answer-btn" id="answer3">Answer 3</button>
+                <button class="answer-btn" id="answer4">Answer 4</button>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+        <div class="screen" id="result-screen">
+            <h2>Quiz Results!</h2>
+            <div class="result-info">
+                <p>You scored <span id="correct-answers">0</span> out of <span id="total-questions-result">5</span> questions correctly.</p>
+                <div class="result-message">
+                    Good job!
+                </div>
+                <button id="restart-button">Restart Quiz</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
