@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffe6c7 0%, #ffbe8a 100%);
+    padding: 24px;
+}
+
+.container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 560px;
+    border-radius: 20px;
+    padding: 42px 36px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+    text-align: center;
+}
+
+/* ---- Screen switching ---- */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- Start screen ---- */
+#start-screen h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#start-screen p {
+    color: #7a7a8c;
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+#myButton,
+#restart-button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 14px 46px;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(118, 75, 162, 0.45);
+}
+
+#myButton:hover,
+#restart-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(118, 75, 162, 0.55);
+}
+
+#myButton:active,
+#restart-button:active {
+    transform: translateY(0);
+}
+
+/* ---- Quiz screen ---- */
+.quiz-header h2 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #2c3e50;
+    line-height: 1.45;
+    margin-bottom: 18px;
+}
+
+.quiz-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #8a8a9c;
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+}
+
+.quiz-info span {
+    font-weight: 600;
+    color: #667eea;
+}
+
+.answers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.answer-btn {
+    background: #f5f6fa;
+    border: 2px solid #e6e8f0;
+    color: #33334d;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 14px 18px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.answer-btn:hover:not(:disabled) {
+    background: #eef0ff;
+    border-color: #667eea;
+    transform: translateX(4px);
+}
+
+.answer-btn.correct {
+    background: #4caf50;
+    border-color: #4caf50;
+    color: #ffffff;
+}
+
+.answer-btn.wrong {
+    background: #e74c3c;
+    border-color: #e74c3c;
+    color: #ffffff;
+}
+
+.answer-btn:disabled {
+    cursor: default;
+}
+
+.progress-bar {
+    margin-top: 26px;
+    height: 10px;
+    background: #eef0f5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+/* ---- Result screen ---- */
+#result-screen h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 16px;
+}
+
+.result-info p {
+    color: #66667a;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+
+.result-info p span {
+    font-weight: 700;
+    color: #667eea;
+}
+
+.result-message {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #4caf50;
+    margin: 20px 0 30px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+    .container {
+        padding: 32px 22px;
+    }
+
+    #start-screen h1 {
+        font-size: 2rem;
+    }
+
+    .quiz-header h2 {
+        font-size: 1.15rem;
+    }
+}
